@@ -105,6 +105,9 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="Exploration-of-HTTP-basics"><a href="#Exploration-of-HTTP-basics" class="headerlink" title="Exploration of HTTP basics"></a>Exploration of HTTP basics</h2><p>ให้นักศึกษาปฏิบัติตามวิดีโอ <a target="_blank" rel="noopener" href="https://youtu.be/iYM2zFP3Zn0">HTTP Crash Course &amp; Exploration</a> แล้วอัดวิดีโออธิบายสิ่งที่นักศึกษาทำ ตามลำดับที่ปรากฎในวิดีโอต้นแบบ</p>
+<p>นักศึกษาสามารถคัดลอก code ต่อไปนี้ไปใช้เป็นต้นแบบได้</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express=<span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line">app.use(express.json());</span><br><span class="line">app.use(express.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">	res.send(<span class="string">&#x27;Hello from Express&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">5000</span>, <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;Server started on 5000&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
 <h2 id="สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้"><a href="#สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้" class="headerlink" title="สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้"></a>สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้</h2><ul>
 <li>ความแตกต่างระหว่าง GET, POST, PUT, DELETE methods</li>
 <li>ความหมายของ web API และการใช้งาน Postman Client ในการทดสอบ web API</li>
@@ -121,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/14/lab4/" data-id="ckl541ibn0008zst960fkfbyp" data-title="LAB 4 -- วันที่ 15 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/14/lab4/" data-id="ckl54988m00082bt90f5y43lh" data-title="LAB 4 -- วันที่ 15 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -168,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/04/tracking-cookies/" data-id="ckl541ibo000bzst9hw1ie30g" data-title="Handout 2 -- First vs. Third party cookies" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/04/tracking-cookies/" data-id="ckl54988o000b2bt97qbnbguk" data-title="Handout 2 -- First vs. Third party cookies" class="article-share-link">Share</a>
       
       
       
@@ -229,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/01/lab3/" data-id="ckl541ibm0007zst951y93cc5" data-title="LAB 3 -- วันที่ 8 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/01/lab3/" data-id="ckl54988l00072bt9hrefhv6e" data-title="LAB 3 -- วันที่ 8 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -304,7 +307,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/01/29/lab2/" data-id="ckl541ibl0006zst9fkzo4sue" data-title="LAB 2 -- วันที่ 1 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/01/29/lab2/" data-id="ckl54988k00062bt9falj0l2o" data-title="LAB 2 -- วันที่ 1 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -370,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/01/24/lab1/" data-id="ckl541ibi0003zst913c492no" data-title="LAB 1 -- วันที่ 25 มกราคม พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/01/24/lab1/" data-id="ckl54988g00032bt9hwta5ssl" data-title="LAB 1 -- วันที่ 25 มกราคม พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -411,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/01/21/info/" data-id="ckl541ibg0001zst9764m3txq" data-title="Handout 1 -- Course information" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/01/21/info/" data-id="ckl54988d00012bt9fubj5agg" data-title="Handout 1 -- Course information" class="article-share-link">Share</a>
       
       
       
@@ -468,7 +471,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/01/21/welcome/" data-id="ckl541ibp000czst9fmzi6r46" data-title="Welcome to CN351" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/01/21/welcome/" data-id="ckl54988p000c2bt997rs8r1l" data-title="Welcome to CN351" class="article-share-link">Share</a>
       
       
       
