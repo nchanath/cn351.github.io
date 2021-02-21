@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564 | CN351 Web Application Security Course Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="เรียนรู้พื้นฐานที่ในการใช้งานโปรแกรม Burp Suiteในแลบนี้ ให้นักศึกษาใช้ dojo VM แล้วปฏิบัติตามวิดีโอ Burpsuite Basics (FREE Community Edition) แล้วอัดวิดีโออธิบายสิ่งที่นักศึกษาทำ ตามลำดับที่ปรากฎในวิด">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564">
+<meta property="og:url" content="http://nchanath.github.io/cn351/2021/02/21/lab5/index.html">
+<meta property="og:site_name" content="CN351 Web Application Security Course Website">
+<meta property="og:description" content="เรียนรู้พื้นฐานที่ในการใช้งานโปรแกรม Burp Suiteในแลบนี้ ให้นักศึกษาใช้ dojo VM แล้วปฏิบัติตามวิดีโอ Burpsuite Basics (FREE Community Edition) แล้วอัดวิดีโออธิบายสิ่งที่นักศึกษาทำ ตามลำดับที่ปรากฎในวิด">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-21T11:19:25.000Z">
+<meta property="article:modified_time" content="2021-02-21T13:34:18.980Z">
+<meta property="article:author" content="Chanathip Namprempre">
+<meta property="article:tag" content="Labs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@ajmeaw">
+  
+    <link rel="alternate" href="/cn351/atom.xml" title="CN351 Web Application Security Course Website" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/cn351/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/cn351/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/cn351/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/cn351/" id="logo">CN351 Web Application Security Course Website</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/cn351/tags/Announcements">Announcements</a>
+        
+          <a class="main-nav-link" href="/cn351/syllabus">Syllabus</a>
+        
+          <a class="main-nav-link" href="/cn351/lecturenotes">Lecture Notes</a>
+        
+          <a class="main-nav-link" href="/cn351/tags/Handouts">Handouts</a>
+        
+          <a class="main-nav-link" href="/cn351/tags/Labs">Labs</a>
+        
+          <a class="main-nav-link" href="/cn351/resources">Resources</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/cn351/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nchanath.github.io/cn351"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-lab5" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/cn351/2021/02/21/lab5/" class="article-date">
+  <time class="dt-published" datetime="2021-02-21T11:19:25.000Z" itemprop="datePublished">2021-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="เรียนรู้พื้นฐานที่ในการใช้งานโปรแกรม-Burp-Suite"><a href="#เรียนรู้พื้นฐานที่ในการใช้งานโปรแกรม-Burp-Suite" class="headerlink" title="เรียนรู้พื้นฐานที่ในการใช้งานโปรแกรม Burp Suite"></a>เรียนรู้พื้นฐานที่ในการใช้งานโปรแกรม Burp Suite</h2><p>ในแลบนี้ ให้นักศึกษาใช้ dojo VM แล้วปฏิบัติตามวิดีโอ <a target="_blank" rel="noopener" href="https://youtu.be/G3hpAeoZ4ek">Burpsuite Basics (FREE Community Edition)</a> แล้วอัดวิดีโออธิบายสิ่งที่นักศึกษาทำ ตามลำดับที่ปรากฎในวิดีโอต้นแบบ</p>
+<p>เนื่องจากใน dojo VM มีการติดตั้ง DVWA และ Burp Suite Community Edition มาเรียบร้อยแล้ว นักศึกษาจึงสามารถเริ่มปฏิบัติตามวิดึโอต้นแบบได้ตั้งแต่นาทีที่ 7:24 เป็นต้นไป</p>
+<h2 id="ข้อควรตระหนัก"><a href="#ข้อควรตระหนัก" class="headerlink" title="ข้อควรตระหนัก"></a>ข้อควรตระหนัก</h2><ol>
+<li><p>เนื่องจาก Burp Suite Community Edition ที่ได้รับการติดตั้งใน dojo VM และในเครื่องของผู้จัดทำวิดีโอต้นแบบเป็นคนละเวอร์ชั่นกัน เมนูและการทำงานบางอย่างจะไม่เหมือนกันเสียทีเดียว ให้นักศึกษาพยายามทำความเข้าใจและหาทางออกด้วยตนเองและสิ่งรอบตัว ทักษะนี้เป็นส่วนหนึ่งที่นักศึกษาต้องเรียนรู้และต้องทำการฝึกฝน</p>
+</li>
+<li><p>ในวิดีโอมีการแสดงการโจมตีชนิด SQL Injection (sqli) ให้นักศึกษาทำตามผู้จัดทำวิดีโอ โดยยังไม่ต้องทำความเข้าใจทฤษฎีพื้นฐานเรื่องนี้ เนื่องจากจะมีการศึกษาโดยละเอียดในแลบอื่นในวิชานี้ต่อไป</p>
+</li>
+<li><p>หากนักศึกษาสนในการใช้ Burp Suite ทำ spidering (หรือ crawling สำหรับ Burp version ปัจจุบัน) และ scanning (หรือ auditing) นักศึกษาสามารถลอง trial version ของ Burp Suite Professional Edition ได้ แต่ต้องทำการทดลองภายใน 30 วัน นักศึกษาไม่จำเป็นต้องทำในส่วนนี้สำหรับแลบนี้</p>
+</li>
+</ol>
+<h2 id="สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้"><a href="#สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้" class="headerlink" title="สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้"></a>สิ่งที่นักศึกษาควรเรียนรู้ในแลบนี้</h2><ul>
+<li>การใช้ Burp Suite ในขั้นพื้นฐาน กล่าวคือการใช้ Tabs ต่อไปนี้คือ Target, Proxy, Repeater, Decoder, Comparer และ User options </li>
+</ul>
+<h2 id="สิ่งที่ต้องส่ง"><a href="#สิ่งที่ต้องส่ง" class="headerlink" title="สิ่งที่ต้องส่ง"></a>สิ่งที่ต้องส่ง</h2><p>วิดีโอ โดยให้นักศึกษาจัดระเบียบให้ครบถ้วนและมีลำดับการแสดงให้เหมือนกับที่ผู้จัดทำวิดีโอได้ทำไว้ ลองดู Handout 3 เป็นตัวอย่างได้ แต่เนื่องจากแลบนี้ค่อนข้างไม่ซับซ้อน ให้นักศึกษาเขียน script ด้วยตนเอง</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nchanath.github.io/cn351/2021/02/21/lab5/" data-id="cklf70d2w000di6t94fou77un" data-title="LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/cn351/tags/Labs/" rel="tag">Labs</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/cn351/2021/02/15/lab4-scripts/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Handout3 -- Lab 4 scripts</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/cn351/tags/Announcements/" rel="tag">Announcements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/cn351/tags/Handouts/" rel="tag">Handouts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/cn351/tags/Labs/" rel="tag">Labs</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/cn351/2021/02/21/lab5/">LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/15/lab4-scripts/">Handout3 -- Lab 4 scripts</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/14/lab4/">LAB 4 -- วันที่ 15 กุมภาพันธ์ พ.ศ. 2564</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/04/tracking-cookies/">Handout 2 -- First vs. Third party cookies</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/01/lab3/">LAB 3 -- วันที่ 8 กุมภาพันธ์ พ.ศ. 2564</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Chanathip Namprempre<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/cn351/tags/Announcements" class="mobile-nav-link">Announcements</a>
+  
+    <a href="/cn351/syllabus" class="mobile-nav-link">Syllabus</a>
+  
+    <a href="/cn351/lecturenotes" class="mobile-nav-link">Lecture Notes</a>
+  
+    <a href="/cn351/tags/Handouts" class="mobile-nav-link">Handouts</a>
+  
+    <a href="/cn351/tags/Labs" class="mobile-nav-link">Labs</a>
+  
+    <a href="/cn351/resources" class="mobile-nav-link">Resources</a>
+  
+</nav>
+    
+
+
+<script src="/cn351/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/cn351/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/cn351/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
