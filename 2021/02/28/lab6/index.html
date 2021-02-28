@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564 | CN351 Web Application Security Course Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Bypassing Client-Side Controlsในแลบนี้นักศึกษาจะใช้ web security dojo VM และทำแบบฝึกหัด WebGoat เรื่อง Parameter Tampering  วัตถุประสงค์ เพื่อศึกษาการแก้ไขข้อมูลทั้งในส่วนของ browser request และ serve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564">
+<meta property="og:url" content="http://nchanath.github.io/cn351/2021/02/28/lab6/index.html">
+<meta property="og:site_name" content="CN351 Web Application Security Course Website">
+<meta property="og:description" content="Bypassing Client-Side Controlsในแลบนี้นักศึกษาจะใช้ web security dojo VM และทำแบบฝึกหัด WebGoat เรื่อง Parameter Tampering  วัตถุประสงค์ เพื่อศึกษาการแก้ไขข้อมูลทั้งในส่วนของ browser request และ serve">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-28T03:19:25.000Z">
+<meta property="article:modified_time" content="2021-02-28T03:52:05.310Z">
+<meta property="article:author" content="Chanathip Namprempre">
+<meta property="article:tag" content="Labs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@ajmeaw">
+  
+    <link rel="alternate" href="/cn351/atom.xml" title="CN351 Web Application Security Course Website" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/cn351/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/cn351/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/cn351/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/cn351/" id="logo">CN351 Web Application Security Course Website</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/cn351/tags/Announcements">Announcements</a>
+        
+          <a class="main-nav-link" href="/cn351/syllabus">Syllabus</a>
+        
+          <a class="main-nav-link" href="/cn351/lecturenotes">Lecture Notes</a>
+        
+          <a class="main-nav-link" href="/cn351/tags/Handouts">Handouts</a>
+        
+          <a class="main-nav-link" href="/cn351/tags/Labs">Labs</a>
+        
+          <a class="main-nav-link" href="/cn351/resources">Resources</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/cn351/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nchanath.github.io/cn351"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-lab6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/cn351/2021/02/28/lab6/" class="article-date">
+  <time class="dt-published" datetime="2021-02-28T03:19:25.000Z" itemprop="datePublished">2021-02-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Bypassing-Client-Side-Controls"><a href="#Bypassing-Client-Side-Controls" class="headerlink" title="Bypassing Client-Side Controls"></a>Bypassing Client-Side Controls</h1><p>ในแลบนี้นักศึกษาจะใช้ web security dojo VM และทำแบบฝึกหัด WebGoat เรื่อง Parameter Tampering </p>
+<h2 id="วัตถุประสงค์"><a href="#วัตถุประสงค์" class="headerlink" title="วัตถุประสงค์"></a>วัตถุประสงค์</h2><ul>
+<li>เพื่อศึกษาการแก้ไขข้อมูลทั้งในส่วนของ browser request และ server response เพื่อให้เห็นว่าการตรวจสอบข้อมูลที่ user กรอกด้วยกลไกต่าง ๆ บน client นั้น เป็นสิ่งที่ไม่มีประสิทธิภาพเพียงพอในการป้องกันการโจมตีในรูปแบบต่าง ๆ</li>
+<li>เพื่อแสดงให้เห็นว่า hidden fields นั้น จริง ๆ แล้ว ถูกซ่อนไว้บนหน้าจอของ web browser เท่านั้น user บนเครื่อง client ยังสามารถเข้าถึงข้อมูลส่วนนี้ได้โดยง่าย</li>
+<li>เพื่อให้เห็นความสำคัญของการตรวจสอบความถูกต้องของข้อมูลที่ผู้ใช้กรอก (โดยผู้ตรวจสอบต้องเป็นฝั่ง server)</li>
+<li>เพื่อศึกษาการใช้งาน burp suite</li>
+<li>เพื่อศึกษาการใช้งาน firefox developer tools</li>
+</ul>
+<h2 id="ขั้นตอนการทำแลบ"><a href="#ขั้นตอนการทำแลบ" class="headerlink" title="ขั้นตอนการทำแลบ"></a>ขั้นตอนการทำแลบ</h2><ol>
+<li>Boot เครื่องเสมือนชื่อ web security dojo</li>
+<li>Start โปรแกรม firefox</li>
+<li>Start โปรแกรม burp suite</li>
+<li>ตรวจสอบว่า burp ดักจับ TCP connection ที่ port ใด แล้วตั้งค่าให้ burp ดักจับ connection ของ firefox</li>
+<li>start webgoat ในเครื่อง</li>
+<li>ทำแลบ Webgoat Parameter Tampering </li>
+<li>1 ทำแลบโดยใช้ burp suite</li>
+<li>2 ทำแลบโดยใช้ firefox developer tools</li>
+<li>การโจมตีในข้อ 6.1 มี<strong>แนวคิด</strong>อย่างไร จงอธิบาย</li>
+<li>การโจมตีในข้อ 6.2 มี<strong>แนวคิด</strong>อย่างไร จงอธิบาย</li>
+<li>การโจมตีในข้อ 6.1 และ 6.2 มี<strong>แนวคิด</strong>ต่างกันอย่างไร จงอธิบาย</li>
+<li>จงหาคำตอบว่า Javascript code ในการ validate รูปแบบของข้อมูลนั้น มีลักษณะอย่างไร อยู่ที่ไหน ให้นักศึกษาเขียนคำบรรยายสรุปการทำงานของโค้ดในส่วนนี้</li>
+</ol>
+<h2 id="ข้อมูลที่อาจเป็นประโยชน์"><a href="#ข้อมูลที่อาจเป็นประโยชน์" class="headerlink" title="ข้อมูลที่อาจเป็นประโยชน์"></a>ข้อมูลที่อาจเป็นประโยชน์</h2><ul>
+<li>ข้อมูลพื้นฐานเกี่ยวกับ Javascript regular expression object: <a target="_blank" rel="noopener" href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">http://www.w3schools.com/jsref/jsref_obj_regexp.asp</a></li>
+</ul>
+<h2 id="สิ่งที่ต้องส่ง"><a href="#สิ่งที่ต้องส่ง" class="headerlink" title="สิ่งที่ต้องส่ง"></a>สิ่งที่ต้องส่ง</h2><ul>
+<li>วิดีโอแสดงการทำแลบ</li>
+<li>คำตอบในข้อ 7-10</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nchanath.github.io/cn351/2021/02/28/lab6/" data-id="cklomazc5000g7kt9ewvrdixn" data-title="LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/cn351/tags/Labs/" rel="tag">Labs</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/cn351/2021/02/21/lab5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/cn351/tags/Announcements/" rel="tag">Announcements</a></li><li class="tag-list-item"><a class="tag-list-link" href="/cn351/tags/Handouts/" rel="tag">Handouts</a></li><li class="tag-list-item"><a class="tag-list-link" href="/cn351/tags/Labs/" rel="tag">Labs</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/cn351/2021/02/28/lab6/">LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/21/lab5/">LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/15/lab4-scripts/">Handout3 -- Lab 4 scripts</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/14/lab4/">LAB 4 -- วันที่ 15 กุมภาพันธ์ พ.ศ. 2564</a>
+          </li>
+        
+          <li>
+            <a href="/cn351/2021/02/04/tracking-cookies/">Handout 2 -- First vs. Third party cookies</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Chanathip Namprempre<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/cn351/tags/Announcements" class="mobile-nav-link">Announcements</a>
+  
+    <a href="/cn351/syllabus" class="mobile-nav-link">Syllabus</a>
+  
+    <a href="/cn351/lecturenotes" class="mobile-nav-link">Lecture Notes</a>
+  
+    <a href="/cn351/tags/Handouts" class="mobile-nav-link">Handouts</a>
+  
+    <a href="/cn351/tags/Labs" class="mobile-nav-link">Labs</a>
+  
+    <a href="/cn351/resources" class="mobile-nav-link">Resources</a>
+  
+</nav>
+    
+
+
+<script src="/cn351/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/cn351/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/cn351/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
