@@ -82,6 +82,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-lab7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/cn351/2021/03/08/lab7/" class="article-date">
+  <time class="dt-published" datetime="2021-03-08T02:40:25.000Z" itemprop="datePublished">2021-03-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/cn351/2021/03/08/lab7/">LAB 7 -- วันที่ 8 มีนาคม พ.ศ. 2564</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Web-Authentication-Vulnerabilities"><a href="#Web-Authentication-Vulnerabilities" class="headerlink" title="Web Authentication Vulnerabilities"></a>Web Authentication Vulnerabilities</h1><p>ในแลบนี้นักศึกษาจะใช้ web security dojo VM และทำแบบฝึกหัด WebGoat เรื่อง Authentication Flaws โดยให้ข้ามหัวข้อแรกคือเรื่อง Password Strength</p>
+<h2 id="ขั้นตอนการทำแลบ"><a href="#ขั้นตอนการทำแลบ" class="headerlink" title="ขั้นตอนการทำแลบ"></a>ขั้นตอนการทำแลบ</h2><ol>
+<li>Boot เครื่องเสมือนชื่อ dojo</li>
+<li>ใช้ burp suite และ  firefox</li>
+<li>ตั้งค่าให้ burp ดักจับ connection ของ firefox</li>
+<li>Start WebGoat</li>
+<li>ทำแลบ WebGoat ในส่วน Authentication Flaws โดยให้ใช้
+<ol type='a'>
+<li>Burp (ใช้สำหรับดักจับข้อมูลระหว่าง browser และ server)</li>
+<li>openssl (ใช้สำหรับ encode และ decode ภายใต้ base64 format) และ</li>
+<li>firefox developer mode (ใช้ในการสำรวจ source code)</li>
+</ol>
+ท่านั้น ห้ามใช้เครื่องมืออำนวยความสะดวกอื่น ๆ เช่น Tamper Data, เว็บไซต์ที่ช่วยในการ encode/decode base64, Live HTTP headers ฯลฯ</li>
+<li>เขียนข้อสรุปสั้น ๆ บนกระดาษ A4 เพื่ออธิบายสาเหตุที่ทำให้เกิดช่องโหว่สำหรับแบบฝึกหัดแต่ละข้อให้ครบทั้ง 3 ข้อ (Forgot Password, Multi Level Login 1, Multi Level Login 2) ส่งท้ายคาบ</li>
+
+<h2 id="ข้อมูลที่อาจเป็นประโยชน์"><a href="#ข้อมูลที่อาจเป็นประโยชน์" class="headerlink" title="ข้อมูลที่อาจเป็นประโยชน์"></a>ข้อมูลที่อาจเป็นประโยชน์</h2><ul>
+<li>นักศึกษาสามารถศึกษาการใช้งานคำสั่ง openssl ได้โดยการพิมพ์ man openssl ที่ command prompt</li>
+</ul>
+<h2 id="สิ่งที่ต้องส่ง"><a href="#สิ่งที่ต้องส่ง" class="headerlink" title="สิ่งที่ต้องส่ง"></a>สิ่งที่ต้องส่ง</h2><ul>
+<li>วิดีโอแสดงการทำแลบ กำหนดส่ง 23.59 น. 11 มีนาคม 2564</li>
+<li>คำตอบในข้อสุดท้าย กำหนดส่ง 23.59 น. 8 มีนาคม 2564</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nchanath.github.io/cn351/2021/03/08/lab7/" data-id="cklzzv57j000ih7t93ceg5ptu" data-title="LAB 7 -- วันที่ 8 มีนาคม พ.ศ. 2564" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/cn351/tags/Labs/" rel="tag">Labs</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-lab6" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/cn351/2021/02/28/lab6/" class="article-date">
@@ -141,69 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/28/lab6/" data-id="cklzzttgo000gg1t9f2g6eqjd" data-title="LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/cn351/tags/Labs/" rel="tag">Labs</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-lab7" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/cn351/2021/02/28/lab7/" class="article-date">
-  <time class="dt-published" datetime="2021-02-28T03:19:25.000Z" itemprop="datePublished">2021-02-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/cn351/2021/02/28/lab7/">LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="Web-Authentication-Vulnerabilities"><a href="#Web-Authentication-Vulnerabilities" class="headerlink" title="Web Authentication Vulnerabilities"></a>Web Authentication Vulnerabilities</h1><p>ในแลบนี้นักศึกษาจะใช้ web security dojo VM และทำแบบฝึกหัด WebGoat เรื่อง Authentication Flaws โดยให้ข้ามหัวข้อแรกคือเรื่อง Password Strength</p>
-<h2 id="ขั้นตอนการทำแลบ"><a href="#ขั้นตอนการทำแลบ" class="headerlink" title="ขั้นตอนการทำแลบ"></a>ขั้นตอนการทำแลบ</h2><ol>
-<li>Boot เครื่องเสมือนชื่อ dojo</li>
-<li>ใช้ burp suite และ  firefox</li>
-<li>ตั้งค่าให้ burp ดักจับ connection ของ firefox</li>
-<li>Start WebGoat</li>
-<li>ทำแลบ WebGoat ในส่วน Authentication Flaws โดยให้ใช้
-<ol type='a'>
-<li>Burp (ใช้สำหรับดักจับข้อมูลระหว่าง browser และ server)</li>
-<li>openssl (ใช้สำหรับ encode และ decode ภายใต้ base64 format) และ</li>
-<li>firefox developer mode (ใช้ในการสำรวจ source code)</li>
-</ol>
-ท่านั้น ห้ามใช้เครื่องมืออำนวยความสะดวกอื่น ๆ เช่น Tamper Data, เว็บไซต์ที่ช่วยในการ encode/decode base64, Live HTTP headers ฯลฯ</li>
-<li>เขียนข้อสรุปสั้น ๆ บนกระดาษ A4 เพื่ออธิบายสาเหตุที่ทำให้เกิดช่องโหว่สำหรับแบบฝึกหัดแต่ละข้อให้ครบทั้ง 3 ข้อ (Forgot Password, Multi Level Login 1, Multi Level Login 2) ส่งท้ายคาบ</li>
-
-<h2 id="ข้อมูลที่อาจเป็นประโยชน์"><a href="#ข้อมูลที่อาจเป็นประโยชน์" class="headerlink" title="ข้อมูลที่อาจเป็นประโยชน์"></a>ข้อมูลที่อาจเป็นประโยชน์</h2><ul>
-<li>นักศึกษาสามารถศึกษาการใช้งานคำสั่ง openssl ได้โดยการพิมพ์ man openssl ที่ command prompt</li>
-</ul>
-<h2 id="สิ่งที่ต้องส่ง"><a href="#สิ่งที่ต้องส่ง" class="headerlink" title="สิ่งที่ต้องส่ง"></a>สิ่งที่ต้องส่ง</h2><ul>
-<li>วิดีโอแสดงการทำแลบ กำหนดส่ง 23.59 น. 11 มีนาคม 2564</li>
-<li>คำตอบในข้อสุดท้าย กำหนดส่ง 23.59 น. 8 มีนาคม 2564</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/28/lab7/" data-id="cklzzttgp000ig1t9gi0e9i3o" data-title="LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/28/lab6/" data-id="cklzzv57i000gh7t9dtdy9il1" data-title="LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -257,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/21/lab5/" data-id="cklzzttgm000dg1t93m6u4qwf" data-title="LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/21/lab5/" data-id="cklzzv57g000dh7t9bha84sru" data-title="LAB 5 -- วันที่ 22 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -383,7 +383,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/15/lab4-scripts/" data-id="cklzzttgj0008g1t9aq9535r2" data-title="Handout3 -- Lab 4 scripts" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/15/lab4-scripts/" data-id="cklzzv57d0008h7t90bdhbw92" data-title="Handout3 -- Lab 4 scripts" class="article-share-link">Share</a>
       
       
       
@@ -440,7 +440,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/14/lab4/" data-id="cklzzttgl000bg1t9gh3a30ba" data-title="LAB 4 -- วันที่ 15 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/14/lab4/" data-id="cklzzv57f000bh7t9cei53e5a" data-title="LAB 4 -- วันที่ 15 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -487,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/04/tracking-cookies/" data-id="cklzzttgq000lg1t9h4ve60f1" data-title="Handout 2 -- First vs. Third party cookies" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/04/tracking-cookies/" data-id="cklzzv57u000ph7t91sa8fal9" data-title="Handout 2 -- First vs. Third party cookies" class="article-share-link">Share</a>
       
       
       
@@ -548,7 +548,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/02/01/lab3/" data-id="cklzzttgi0007g1t9eieo5yw8" data-title="LAB 3 -- วันที่ 8 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/02/01/lab3/" data-id="cklzzv57c0007h7t97zdqeoff" data-title="LAB 3 -- วันที่ 8 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -623,7 +623,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/01/29/lab2/" data-id="cklzzttgh0006g1t9gs5yfjh5" data-title="LAB 2 -- วันที่ 1 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/01/29/lab2/" data-id="cklzzv57b0006h7t97klr4fe8" data-title="LAB 2 -- วันที่ 1 กุมภาพันธ์ พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -689,7 +689,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/01/24/lab1/" data-id="cklzzttge0003g1t9aqx0bwqv" data-title="LAB 1 -- วันที่ 25 มกราคม พ.ศ. 2564" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/01/24/lab1/" data-id="cklzzv5780003h7t91xoufebr" data-title="LAB 1 -- วันที่ 25 มกราคม พ.ศ. 2564" class="article-share-link">Share</a>
       
       
       
@@ -730,7 +730,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nchanath.github.io/cn351/2021/01/21/info/" data-id="cklzzttgb0001g1t9hutjdy9z" data-title="Handout 1 -- Course information" class="article-share-link">Share</a>
+      <a data-url="http://nchanath.github.io/cn351/2021/01/21/info/" data-id="cklzzv5750001h7t93r32g2lk" data-title="Handout 1 -- Course information" class="article-share-link">Share</a>
       
       
       
@@ -775,11 +775,11 @@
       <ul>
         
           <li>
-            <a href="/cn351/2021/02/28/lab6/">LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564</a>
+            <a href="/cn351/2021/03/08/lab7/">LAB 7 -- วันที่ 8 มีนาคม พ.ศ. 2564</a>
           </li>
         
           <li>
-            <a href="/cn351/2021/02/28/lab7/">LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564</a>
+            <a href="/cn351/2021/02/28/lab6/">LAB 6 -- วันที่ 1 มีนาคม พ.ศ. 2564</a>
           </li>
         
           <li>
